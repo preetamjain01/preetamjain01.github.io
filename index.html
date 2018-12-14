@@ -1,0 +1,158 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>PUBG Finish Placement Prediction</title>
+  <script src="../../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <link rel="import" href="../../elements/codelab.html">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <style is="custom-style">
+    body {
+      font-family: "Roboto",sans-serif;
+      background: var(--google-codelab-background, #F8F9FA);
+    }
+  </style>
+  
+</head>
+<body unresolved class="fullbleed">
+
+  <google-codelab title="PUBG Finish Placement Prediction"
+                  environment="web"
+                  feedback-link="">
+    
+      <google-codelab-step label="2.Exploratory Data Analysis" duration="0">
+        <p>It is one of the most important steps in finding the insights from the data. In this, we tried to find the following-</p>
+<ol type="1" start="1">
+<li>Analysis on the basis of kills-</li>
+</ol>
+<p><img style="max-width: 545.03px" src="img\3357cb0ba17e1118.png"></p>
+<p>B. Damage dealt by 0 killers-</p>
+<p><img style="max-width: 530.77px" src="img\4c3ed60ef5e25fd0.png"></p>
+<p>C. Kills vs. Damage Dealt plot-</p>
+<p><img style="max-width: 531.50px" src="img\94ed6141e27b68de.png"> </p>
+<p>  D. Plotting win placement percentage vs kills</p>
+<p><img style="max-width: 421.00px" src="img\2b72668221cfcf5a.png"></p>
+<p>E. Kills vs. Winning-</p>
+<p><img style="max-width: 540.25px" src="img\14163175e4f0f8df.png"></p>
+<p>F. Plotting the relation between DBNO and kills</p>
+<p><img style="max-width: 522.75px" src="img\96c292fa3eb7a1e6.png"></p>
+<p>G. Analysis on the basis of distance run-</p>
+<p><img style="max-width: 528.56px" src="img\9aeb343ecaaa7ad3.png"></p>
+<p>H. Relation between walk distance and winner placement</p>
+<p><img style="max-width: 440.00px" src="img\e2349ea0868acf45.png"></p>
+<ol type="1" start="1">
+<li>Analysis on the basis of Driving Vehicles</li>
+</ol>
+<p><img style="max-width: 504.11px" src="img\527e300015893a50.png"></p>
+<p>J. <img style="max-width: 440.00px" src="img\36fc31c975cf4072.png"></p>
+<p><img style="max-width: 522.50px" src="img\b2ff45f66e443d1d.png"></p>
+<p>K. Analysis on the basis of swim distance</p>
+<p><img style="max-width: 495.50px" src="img\8c4fc2dbba5e91f9.png"></p>
+<p>L. </p>
+<p><img style="max-width: 501.50px" src="img\ba22244c186711fc.png"></p>
+<p>M. Using heal &amp; boost vs winning percentage</p>
+<p><img style="max-width: 525.50px" src="img\b75ae4592ecb7e38.png"></p>
+<p>N. </p>
+<p><img style="max-width: 527.50px" src="img\e88c24fd782973df.png"></p>
+<p>O.</p>
+<p><img style="max-width: 531.50px" src="img\203a1314e14efdbe.png"></p>
+<p>P. Analysis in different modes of play- Solos, Duos and Squads</p>
+<p><img style="max-width: 624.00px" src="img\72f1061fb8ca3ab3.png"></p>
+<p>Q.</p>
+<p><img style="max-width: 527.50px" src="img\8be1af87dd06592e.png"></p>
+<p>R. Finding correlation between various features-</p>
+<p><img style="max-width: 526.41px" src="img\fc4038fae71960c4.png"></p>
+<p><img style="max-width: 613.00px" src="img\7ad4346d62e9a0e7.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="3. Feature Engineering" duration="0">
+        <p>It is one of the most important part in Machine Learning as it helps in finding out the best feature for prediction as well as polishing certain features. The various features that we have engineered are-</p>
+<ol type="1" start="1">
+<li>Normalising the columns based on the players joining the match.</li>
+<li>Changing the datatype for reducing the memory usage.</li>
+<li>Using SHAP to find the best features for Prediction and keeping only them for prediction.</li>
+</ol>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="4. Anomaly Detection" duration="0">
+        <p>Here, we have found all the rows in the dataset that contains anomalous data. This is found by mapping the rules of the game with practicality.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="5. Prediction with ML Algorithms" duration="0">
+        <p>Here, we try to predict the winner&#39;s probability of winning on the scale of 0-1.</p>
+<p>The ML algorithms used are-</p>
+<ol type="1" start="1">
+<li>Linear Regression-</li>
+<li>Random Forest Regressor-</li>
+<li>Multilayer Perceptron Regressor-</li>
+<li>LightGBM</li>
+</ol>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="6. Luigi Pipeline-" duration="0">
+        <p>This is for the automation of the complete Machine Learning process. This includes from cleaning the data, error handling, prediction and each and every process.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="7. Flask-" duration="0">
+        <p>We have created a Web application using Flask. It consists of the following-</p>
+<ol type="1" start="1">
+<li>The Exploratory Data Analysis </li>
+<li>Taking user input and predicting the winner placement</li>
+<li>Anomaly Detection Code</li>
+</ol>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="8. Containerize-" duration="0">
+        <p>We created a docker image of the whole process uploaded it in the S3 Bucket.</p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-49880327-14', 'auto');
+
+    (function() {
+      var gaCodelab = '';
+      if (gaCodelab) {
+        ga('create', gaCodelab, 'auto', {name: 'codelab'});
+      }
+
+      var gaView;
+      var parts = location.search.substring(1).split('&');
+      for (var i = 0; i < parts.length; i++) {
+        var param = parts[i].split('=');
+        if (param[0] === 'viewga') {
+          gaView = param[1];
+          break;
+        }
+      }
+      if (gaView && gaView !== gaCodelab) {
+        ga('create', gaView, 'auto', {name: 'view'});
+      }
+    })();
+  </script>
+
+</body>
+</html>
